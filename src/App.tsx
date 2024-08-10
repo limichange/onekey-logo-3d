@@ -16,7 +16,7 @@ import {
 
 const Grid = ({ number = 23, lineWidth = 0.026, height = 0.5 }) => (
   // Renders a grid and crosses as instances
-  <Instances position={[0, 0.02, 0]}>
+  <Instances position={[0, 0.02, 0]} scale={[1.1, 1.1, 1.1]}>
     <planeGeometry args={[lineWidth, height]} />
     <meshBasicMaterial color='#999' />
     {Array.from({ length: number }, (_, y) =>
@@ -76,7 +76,6 @@ function App() {
       <Center scale={[1, 1, 1]} front top {...config}>
         <Text3D
           rotation={[-Math.PI / 2, 0, 0]}
-          castShadow
           bevelEnabled
           font={'/inter.json'}
           scale={4}
